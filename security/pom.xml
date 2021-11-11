@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>security</artifactId>
+    <name>security</name>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
