@@ -1,4 +1,4 @@
-package org.example.catpoint;
+package org.example.catpoint.app.service;
 
 import java.awt.*;
 

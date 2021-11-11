@@ -1,5 +1,12 @@
-package org.example.catpoint;
+package org.example.catpoint.security.service;
 
+
+import org.example.catpoint.image.service.FakeImageService;
+import org.example.catpoint.security.application.StatusListener;
+import org.example.catpoint.security.data.AlarmStatus;
+import org.example.catpoint.security.data.ArmingStatus;
+import org.example.catpoint.security.data.SecurityRepository;
+import org.example.catpoint.security.data.Sensor;
 
 import java.awt.image.BufferedImage;
 import java.util.HashSet;

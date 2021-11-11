@@ -1,6 +1,9 @@
-package org.example.catpoint;
+package org.example.catpoint.app.application;
 
 import net.miginfocom.swing.MigLayout;
+import org.example.catpoint.security.data.ArmingStatus;
+import org.example.catpoint.security.service.SecurityService;
+import org.example.catpoint.app.service.StyleService;
 
 import javax.swing.*;
 import java.util.Arrays;

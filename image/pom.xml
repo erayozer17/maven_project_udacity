@@ -17,18 +17,5 @@
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>auth</artifactId>
-            <version>2.15.67</version>
-        </dependency>
-
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>rekognition</artifactId>
-            <version>2.15.67</version>
-        </dependency>
-    </dependencies>
 
 </project>

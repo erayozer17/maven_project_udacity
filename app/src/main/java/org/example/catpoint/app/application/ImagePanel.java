@@ -1,6 +1,10 @@
-package org.example.catpoint;
+package org.example.catpoint.app.application;
 
 import net.miginfocom.swing.MigLayout;
+import org.example.catpoint.security.application.StatusListener;
+import org.example.catpoint.security.data.AlarmStatus;
+import org.example.catpoint.security.service.SecurityService;
+import org.example.catpoint.app.service.StyleService;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

@@ -1,4 +1,4 @@
-package org.example.catpoint;
+package org.example.catpoint.image.service;
 
 import java.awt.image.BufferedImage;
 import java.util.Random;

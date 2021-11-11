@@ -1,4 +1,4 @@
-package org.example.catpoint;
+package org.example.catpoint.security.data;
 
 import java.util.Set;
 

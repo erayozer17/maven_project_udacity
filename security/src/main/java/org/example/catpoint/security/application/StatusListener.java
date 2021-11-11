@@ -1,4 +1,6 @@
-package org.example.catpoint;
+package org.example.catpoint.security.application;
+
+import org.example.catpoint.security.data.AlarmStatus;
 
 /**
  * Identifies a component that should be notified whenever the system status changes

@@ -1,4 +1,4 @@
-package org.example.catpoint;
+package org.example.catpoint.security.data;
 
 
 import com.google.common.collect.ComparisonChain;

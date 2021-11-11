@@ -1,4 +1,4 @@
-package org.example.catpoint;
+package org.example.catpoint.image.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,10 @@
-package org.example.catpoint;
+package org.example.catpoint.app.application;
 
 import net.miginfocom.swing.MigLayout;
+import org.example.catpoint.security.data.PretendDatabaseSecurityRepositoryImpl;
+import org.example.catpoint.security.data.SecurityRepository;
+import org.example.catpoint.image.service.FakeImageService;
+import org.example.catpoint.security.service.SecurityService;
 
 import javax.swing.*;
 

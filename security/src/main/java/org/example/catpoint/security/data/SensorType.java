@@ -1,4 +1,4 @@
-package org.example.catpoint;
+package org.example.catpoint.security.data;
 
 /**
  * List of available sensor types. Not currently used by system, other than for display.
