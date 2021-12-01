@@ -8,5 +8,6 @@ module security {
     exports org.example.catpoint.security.service to app;
     exports org.example.catpoint.security.application to app;
 
-    opens org.example.catpoint.security.service;
+    opens org.example.catpoint.security.data to com.google.gson;
+
 }

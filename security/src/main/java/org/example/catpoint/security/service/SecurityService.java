@@ -28,6 +28,8 @@ public class SecurityService {
     private ImageService imageService;
     private SecurityRepository securityRepository;
     private Set<StatusListener> statusListeners = new HashSet<>();
+    private boolean isContainsCat = false;
+
 
     public SecurityService(SecurityRepository securityRepository, ImageService imageService) {
         this.securityRepository = securityRepository;
@@ -47,9 +49,13 @@ public class SecurityService {
         if(armingStatus == ArmingStatus.DISARMED) {
             setAlarmStatus(AlarmStatus.NO_ALARM);
         } else if (isSystemArmedAwayOrArmedHome(armingStatus)){
+            if (isContainsCat){
+                setAlarmStatus(AlarmStatus.ALARM);
+            }
             setActivationFalseForSensors(this.getActiveSensors());
         }
         securityRepository.setArmingStatus(armingStatus);
+        statusListeners.forEach(StatusListener::sensorStatusChanged);
     }
 
     /**
@@ -103,7 +109,8 @@ public class SecurityService {
      * @param currentCameraImage
      */
     public void processImage(BufferedImage currentCameraImage) {
-        catDetected(imageService.imageContainsCat(currentCameraImage, 50.0f));
+        isContainsCat = imageService.imageContainsCat(currentCameraImage, 50.0f);
+        catDetected(isContainsCat);
     }
 
     public AlarmStatus getAlarmStatus() {

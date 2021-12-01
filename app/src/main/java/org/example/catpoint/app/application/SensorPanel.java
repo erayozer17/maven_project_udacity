@@ -2,6 +2,8 @@ package org.example.catpoint.app.application;
 
 import net.miginfocom.swing.MigLayout;
 import org.example.catpoint.app.service.StyleService;
+import org.example.catpoint.security.application.StatusListener;
+import org.example.catpoint.security.data.AlarmStatus;
 import org.example.catpoint.security.service.SecurityService;
 import org.example.catpoint.security.data.Sensor;
 import org.example.catpoint.security.data.SensorType;
@@ -12,7 +14,7 @@ import javax.swing.*;
  * Panel that allows users to add sensors to their system. Sensors may be
  * manually set to "active" and "inactive" to test the system.
  */
-public class SensorPanel extends JPanel {
+public class SensorPanel extends JPanel implements StatusListener {
 
     private SecurityService securityService;
 
@@ -45,6 +47,7 @@ public class SensorPanel extends JPanel {
         add(panelLabel, "wrap");
         add(newSensorPanel, "span");
         add(sensorListPanel, "span");
+        securityService.addStatusListener(this);
     }
 
     /**
@@ -115,6 +118,21 @@ public class SensorPanel extends JPanel {
      */
     private void removeSensor(Sensor sensor) {
         securityService.removeSensor(sensor);
+        updateSensorList(sensorListPanel);
+    }
+
+    @Override
+    public void notify(AlarmStatus status) {
+
+    }
+
+    @Override
+    public void catDetected(boolean catDetected) {
+
+    }
+
+    @Override
+    public void sensorStatusChanged() {
         updateSensorList(sensorListPanel);
     }
 }

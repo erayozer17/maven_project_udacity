@@ -155,6 +155,7 @@ public class SecurityServiceTest {
     @ParameterizedTest
     @EnumSource(value = ArmingStatus.class, names = {"ARMED_AWAY", "ARMED_HOME"})
     public void updateSensorsSystemArmedDeactivateAllSensors(ArmingStatus armingStatus){
+        // If the system is armed, reset all sensors to inactive. (Case 10)
         Set<Sensor> sensors = getSensors(true, 4);
         when(repository.getSensors()).thenReturn(sensors);
         securityService.setArmingStatus(armingStatus);
@@ -165,6 +166,7 @@ public class SecurityServiceTest {
 
     @Test
     public void changeAlarmStatusSystemArmedHomeAndCatDetectedChangeToAlarmStatus(){
+        //If the system is armed-home while the camera shows a cat, set the alarm status to alarm.(Case 11)
         when(imageService.imageContainsCat(any(), anyFloat())).thenReturn(true);
         when(repository.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
         securityService.processImage(mock(BufferedImage.class));
